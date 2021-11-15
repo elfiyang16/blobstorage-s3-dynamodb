@@ -15,9 +15,11 @@ For this use case, it should be fine with the /tmp, though with a quite tight up
 
 TODO: to make it a proper data store:
 Add more complex logic to the business layer. 
+
 Upon upload:
 - assign a proper key to the object (S3 is partitioned by prefix), upload to s3
 - if s3 upload succeeds, save the metadata to DynamoDB
+
 Upon retrieval:
 - read the record from DynamoDB and extract the object key
 - download from s3
